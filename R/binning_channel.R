@@ -5,7 +5,7 @@ binning_channel <- function(channel_vec, bins) {
   while(tot.counter <= length(channel_vec)) {
     while(channel_vec[tot.counter] < bins[bincounter,2]) {
       bin.index[tot.counter] <- bincounter
-      tot.counter <- tot.counter +1
+      tot.counter <- tot.counter + 1
       if(tot.counter > length(channel_vec)) {
         break
       }
