@@ -1,10 +1,10 @@
 Package: cytobins
-Title: What the Package Does (One Line, Title Case)
+Title: Flow Cytometric Data Binning
 Version: 0.0.0.9000
 Authors@R: 
     person("Karoly", "Palffy", , "pkenv77@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2015-7972"))
-Description: An R package for simple, customizable binning of flow cytometric data.
+Description: An R package for simple, customizable 2D binning of flow cytometric data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
