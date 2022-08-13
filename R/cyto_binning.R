@@ -14,11 +14,14 @@ cyto_binning <- function(gh, node = "root", channels, xlimits, ylimits, binnumbe
   bin_filled  <- bin_matrix(bin_indices, nrow(xbins), nrow(ybins))
 
   if(vectorize == TRUE) {
-    bin_vector <- NULL
+    bin_vector   <- NULL
     for(k in 1:nrow(bin_filled)) {
       bin_vector <- c(bin_vector, bin_filled[k,])
     }
-    return(bin_filled)
+    binlist      <- list(bin_filled, bin_vector)
+    return(binlist)
   }
+
+  return(bin_filled)
 
 }
