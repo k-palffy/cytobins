@@ -18,6 +18,7 @@ cyto_binning <- function(gh, node = "root", channels, xlimits, ylimits, binnumbe
     for(k in 1:nrow(bin_filled)) {
       bin_vector <- c(bin_vector, bin_filled[k,])
     }
+    return(bin_filled)
   }
 
 }
