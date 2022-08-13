@@ -1,5 +1,5 @@
-prepare_gh <- function(gh, prepnode, channels) {
-  gh_matrix     <- exprs(gh_pop_get_data(gh, y = prepnode))[,channels]
+prepare_gh <- function(gh, prepnode, channel) {
+  gh_matrix     <- exprs(gh_pop_get_data(gh, y = prepnode))[,channel]
   gh_matrix_ext <- as.matrix(data.frame(gh.matrix,
                                     rep(NA, times = nrow(gh.matrix)),
                                     rep(NA, times = nrow(gh.matrix))))
