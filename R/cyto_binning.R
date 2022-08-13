@@ -1,7 +1,7 @@
 cyto_binning <- function(gh, node = "root", channels, xlimits, ylimits, binnumber, vectorize = TRUE) {
 
-  xbins       <- create_bins(xlimits, binnumber)
-  ybins       <- create_bins(ylimits, binnumber)
+  xbins       <- create_bins(xlimits[1], xlimits[2], binnumber)
+  ybins       <- create_bins(ylimits[1], ylimits[2], binnumber)
 
   gh_temp     <- prepare_gh(gh, node, channels)
   gh_temp     <- gh.temp[order(gh.temp[,1]),]
