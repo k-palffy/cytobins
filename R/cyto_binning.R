@@ -18,12 +18,12 @@ cyto_binning <- function(gh, node = "root", channels, xlimits, ylimits, binnumbe
   ybins       <- create_bins(ylimits[1], ylimits[2], binnumber)
 
   gh_temp     <- prepare_gh(gh, node, channels)
-  gh_temp     <- gh.temp[order(gh.temp[,1]),]
-  gh_temp[,3] <- binning_channel(gh.temp[,1], xbins)
-  gh_temp     <- gh.temp[order(gh.temp[,2]),]
-  gh_temp[,4] <- binning_channel(gh.temp[,2], ybins)
-  gh_temp     <- gh.temp[order(gh.temp[,3],gh.temp[,4]),]
-  bin_indices <- gh.temp[,3:4]
+  gh_temp     <- gh_temp[order(gh_temp[,1]),]
+  gh_temp[,3] <- binning_channel(gh_temp[,1], xbins)
+  gh_temp     <- gh_temp[order(gh_temp[,2]),]
+  gh_temp[,4] <- binning_channel(gh_temp[,2], ybins)
+  gh_temp     <- gh_temp[order(gh_temp[,3],gh_temp[,4]),]
+  bin_indices <- gh_temp[,3:4]
 
   bin_filled  <- bin_matrix(bin_indices, nrow(xbins), nrow(ybins))
 
