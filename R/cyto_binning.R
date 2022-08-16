@@ -1,3 +1,17 @@
+#' Binning flow cytometric data
+#'
+#' @param gh a GatingHierarchy object.
+#' @param node name of the node (gate).
+#' @param channels number of the channels (columns) in the cytometric data matrix, a vector with 2 elements.
+#' @param xlimits lower and upper limits of the 1st channel, a vector with 2 elements.
+#' @param ylimits lower and upper limits of the 2nd channel, a vector with 2 elements.
+#' @param binnumber number of bins (compartments) to be created along the channel axes.
+#' @param vectorize logical indicating whether the resulting binning matrix should be converted into a vector for easier comparison with other GatingHierarchy objects.
+#'
+#' @return A binning matrix and (optionally) its vectorized form.
+#' @export
+#'
+#' @examples
 cyto_binning <- function(gh, node = "root", channels, xlimits, ylimits, binnumber, vectorize = TRUE) {
 
   xbins       <- create_bins(xlimits[1], xlimits[2], binnumber)
