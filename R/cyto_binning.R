@@ -39,3 +39,31 @@ cyto_binning <- function(gh, node = "root", channels, xlimits, ylimits, binnumbe
   return(bin_filled)
 
 }
+
+binning_channel <- function(channel_vec, bins) {
+  tot_counter  <- 1
+  bincounter   <- 1
+  bin_index    <- vector(length = length(channel_vec))
+  while(tot_counter <= length(channel_vec)) {
+    while(channel_vec[tot_counter] < bins[bincounter,2]) {
+      bin_index[tot_counter] <- bincounter
+      tot_counter <- tot_counter + 1
+      if(tot_counter > length(channel_vec)) {
+        break
+      }
+    }
+    bincounter <- bincounter + 1
+  }
+  return(bin_index)
+}
+
+bin_matrix <- function(x, numbin1, numbin2) {
+  temp_matrix <- matrix(data = 0, nrow = numbin1, ncol = numbin2)
+  for(i in 1:numbin1) {
+    temp_vector <- x[x[,1] == i,2]
+    bin_counts  <- tapply(temp_vector, as.factor(temp_vector), FUN = length)
+    temp_matrix[i,as.numeric(names(bin_counts))] <- bin_counts
+  }
+  return(temp_matrix)
+}
+
