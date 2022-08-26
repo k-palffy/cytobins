@@ -2,7 +2,7 @@
 #'
 #' Divide the data ranges of two selected channels of a flow cytometric data set (a GatingHierarchy object) into `n` categories.
 #' The process results in a matrix with `n` x `n` compartments (bins) in the space defined by the selected channels,
-#' assigning each detected cell/event to a sepcific bin according to its relevant channel signals.
+#' assigning each detected cell/event to a specific bin according to its relevant channel signals.
 #'
 #' @param gh a GatingHierarchy object.
 #' @param node name of the node (gate).
@@ -24,7 +24,7 @@
 #' # creating a separate GatingHierarchy object
 #' phyto_gh   <- phyto_gs[[1]]
 #'
-#' # data binning along the axes of optical channels FSC and FL3, with 64x64 bins
+#' # data binning along the axes of channels FSC and FL3, with 64x64 bins
 #' # performed on a gated population ("chl") of phyto_gh
 #' phyto_bins <- cyto_binning(gh = phyto_gh, node = "chl", channels = c(1,9),
 #'                            xlimits = c(3,6), ylimits = c(3,7), binnumber = 64)
