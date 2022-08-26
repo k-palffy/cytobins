@@ -35,7 +35,7 @@ A binning matrix and (optionally) its vectorized form. In the case of both, a li
 \description{
 Divide the data ranges of two selected channels of a flow cytometric data set (a GatingHierarchy object) into \code{n} categories.
 The process results in a matrix with \code{n} x \code{n} compartments (bins) in the space defined by the selected channels,
-assigning each detected cell/event to a sepcific bin according to its relevant channel signals.
+assigning each detected cell/event to a specific bin according to its relevant channel signals.
 }
 \examples{
 library(flowCore)
@@ -46,7 +46,7 @@ phyto_gs   <- load_gs(path = system.file("extdata", "phyto_flowcyt_sample", pack
 # creating a separate GatingHierarchy object
 phyto_gh   <- phyto_gs[[1]]
 
-# data binning along the axes of optical channels FSC and FL3, with 64x64 bins
+# data binning along the axes of channels FSC and FL3, with 64x64 bins
 # performed on a gated population ("chl") of phyto_gh
 phyto_bins <- cyto_binning(gh = phyto_gh, node = "chl", channels = c(1,9),
                            xlimits = c(3,6), ylimits = c(3,7), binnumber = 64)
